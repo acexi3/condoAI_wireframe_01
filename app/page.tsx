@@ -1,4 +1,4 @@
-// app/page.tsx
+// app/page.tsx for the CondoAI Platform Manager protype
 "use client";
 
 import React, { useState } from "react";
