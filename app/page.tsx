@@ -1,4 +1,69 @@
+"use client";
+
 import Image from "next/image";
+import React, { useState } from "react";
+
+import type {
+  CardProps,
+  CardHeaderProps,
+  CardTitleProps,
+  CardContentProps,
+  ButtonProps,
+  InputProps,
+} from "../types";
+
+import {
+  Search,
+  Upload,
+  MessageSquare,
+  File,
+  Lock,
+  FileText,
+  Users,
+  Home,
+  Settings,
+  Folder,
+  ChevronRight,
+  ChevronDown,
+  BookOpen,
+  Shield,
+  Building,
+  User,
+  ScrollText,
+  Bell,
+  Wrench,
+} from "lucide-react";
+
+const Card: React.FC<CardProps> = ({ children, className = "" }) => (
+  <div className={`bg-white rounded-lg shadow-md ${className}`}>
+    {children}
+  </div>
+);
+
+const CardHeader: React.FC<CardHeaderProps> = ({ children }) => (
+  <div className="p-4 border-b">{children}</div>
+);
+
+const CardTitle: React.FC<CardTitleProps> = ({ children }) => (
+  <h2 className="text-xl font-semibold">{children}</h2>
+);
+
+const CardContent: React.FC<CardContentProps> = ({ children }) => (
+  <div className="p-4">{children}</div>
+);
+
+const Button: React.FC<ButtonProps> = ({ 
+  children, 
+  variant = "default", 
+  className = "", 
+  ...props 
+}) => {
+  const baseStyles = "px-4 py-2 rounded-md font-medium transition-colors";
+  const variants = {
+    default: "bg-blue-600 text-white hover:bg-blue-700",
+    outline: "border border-gray-300 hover:bg-gray-50",
+    ghost: "hover:bg-gray-100"
+  };
 
 export default function Home() {
   return (
