@@ -28,3 +28,14 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   prefix?: ReactNode;
 }
+
+export interface FolderItemProps {
+  folder: {
+    id: string;
+    name: string;
+    icon: ReactNode;
+    subfolders: string[];
+  };
+  isExpanded: boolean;
+  toggleFolder: (id: string) => void;
+}
