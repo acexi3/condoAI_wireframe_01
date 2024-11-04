@@ -278,7 +278,7 @@ const DocumentLibrary: React.FC = () => {
 
 const DocumentDashboard: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex">
       {/* Sidebar - hidden on mobile with a responsive menu */}
       <div className="hidden md:block md:fixed md:w-64 md:h-full bg-white border-r p-4">
         <div className="text-xl font-bold mb-8">Condo.AI</div>
@@ -372,7 +372,7 @@ const DocumentDashboard: React.FC = () => {
 
 const ChatInterface: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex">
       {/* Sidebar */}
       <div className="hidden md:block fixed w-64 h-full bg-white border-r p-4">
         <div className="text-xl font-bold mb-8">CondoAI Chat</div>
