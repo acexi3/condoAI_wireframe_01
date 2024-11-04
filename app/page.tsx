@@ -375,7 +375,7 @@ const ChatInterface: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex">
       {/* Sidebar */}
       <div className="hidden md:block fixed w-64 h-full bg-white border-r p-4">
-        <div className="text-xl font-bold mb-8">CondoAI Chat</div>
+        <div className="text-xl font-bold mb-8">Condo.AI Chat</div>
         <div className="mb-4">
           <Input
             placeholder="Search conversations"
