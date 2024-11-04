@@ -135,8 +135,8 @@ const LandingPage: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 p-8">
       <div className="max-w-6xl mx-auto">
         <header className="flex justify-between items-center mb-16">
-          <h1 className="text-2xl font-bold text-blue-900">CondoAI</h1>
-          <Button variant="outline">Login</Button>
+          <h1 className="text-2xl font-bold text-blue-900">Condo.AI Platform Manager</h1>
+          
         </header>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
@@ -144,7 +144,7 @@ const LandingPage: React.FC = () => {
             <h2 className="text-4xl font-bold text-blue-900 mb-4">
               AI-Powered Condominium Management
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 font-bold mb-6">
               Streamline your condo operations with intelligent document
               management, automated meeting minutes, and instant access to vital
               information.
@@ -278,10 +278,10 @@ const DocumentLibrary: React.FC = () => {
 
 const DocumentDashboard: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Sidebar */}
-      <div className="fixed w-64 h-full bg-white border-r p-4">
-        <div className="text-xl font-bold mb-8">CondoAI</div>
+    <div className="min-h-screen bg-gray-50 flex">
+      {/* Sidebar - hidden on mobile with a responsive menu */}
+      <div className="hidden md:block md:fixed md:w-64 md:h-full bg-white border-r p-4">
+        <div className="text-xl font-bold mb-8">Condo.AI</div>
         <nav className="space-y-2">
           <Button variant="ghost" className="w-full justify-start">
             <Home className="mr-2 h-4 w-4" /> Dashboard
@@ -301,11 +301,12 @@ const DocumentDashboard: React.FC = () => {
         </nav>
       </div>
 
-      {/* Main Content */}
-      <div className="ml-64 p-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Main Content - margin and padding for responsive layout */}
+      <div className="flex-1 w-full md:ml-64 p-4 md:p-8">
+        {/* responsive grid layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Document Upload Card */}
-          <Card>
+          <Card className="w-full">
             <CardHeader>
               <CardTitle>Mint & Store Documents</CardTitle>
             </CardHeader>
@@ -327,7 +328,7 @@ const DocumentDashboard: React.FC = () => {
           </Card>
 
           {/* Recent Documents */}
-          <Card>
+          <Card className="w-full">
             <CardHeader>
               <CardTitle>Recent Documents</CardTitle>
             </CardHeader>
@@ -358,8 +359,9 @@ const DocumentDashboard: React.FC = () => {
               </div>
             </CardContent>
           </Card>
-
-          <DocumentLibrary />
+          <div className="col-span-1 lg:col-span-2">
+            <DocumentLibrary />
+          </div>
         </div>
       </div>
     </div>
@@ -370,9 +372,9 @@ const DocumentDashboard: React.FC = () => {
 
 const ChatInterface: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 flex">
       {/* Sidebar */}
-      <div className="fixed w-64 h-full bg-white border-r p-4">
+      <div className="hidden md:block fixed w-64 h-full bg-white border-r p-4">
         <div className="text-xl font-bold mb-8">CondoAI Chat</div>
         <div className="mb-4">
           <Input
@@ -401,9 +403,9 @@ const ChatInterface: React.FC = () => {
       </div>
 
       {/* Chat Area */}
-      <div className="ml-64 h-screen flex flex-col">
+      <div className="md:ml-64 h-screen flex flex-col">
         <div className="flex-1 p-6 overflow-y-auto">
-          <div className="max-w-3xl mx-auto space-y-6">
+          <div className="max-w-6xl mx-auto space-y-6">
             <div className="flex items-start gap-4">
               <div className="bg-blue-100 rounded-lg p-4 max-w-[80%]">
                 <p>Hello! How can I help you with condominium matters today?</p>
@@ -419,9 +421,9 @@ const ChatInterface: React.FC = () => {
             </div>
           </div>
         </div>
-
+        {/* Chat Input */}
         <div className="border-t p-4">
-          <div className="max-w-3xl mx-auto flex gap-4">
+          <div className="flex gap-4 max-w-none mx-4">
             <Input placeholder="Type your message..." className="flex-1" />
             <Button>Send</Button>
           </div>
@@ -446,7 +448,7 @@ const App: React.FC = () => {
   return (
     <div className="relative">
       <div className="fixed top-4 right-4 z-50 flex gap-2">
-        <Button onClick={() => setCurrentScreen("landing")}>Landing</Button>
+        <Button onClick={() => setCurrentScreen("landing")}>Login</Button>
         <Button onClick={() => setCurrentScreen("dashboard")}>Dashboard</Button>
         <Button onClick={() => setCurrentScreen("chat")}>Chat</Button>
       </div>
